@@ -36,7 +36,7 @@ Understanding the organization of the repository is crucial for navigation and m
 
 To get a local copy up and running, follow these simple steps:
 
-1. **Clone the repository**: Use `git clone [repository-url]` to clone this repository to your local machine.
+1. **Clone the repository**: Use `git clone [[repository-url]](https://github.com/cyber-prags/Portfolio-Website.git)` to clone this repository to your local machine.
 2. **Navigate to the directory**: Change your directory to the cloned repository.
 3. **Open `index.html`**: Use any web browser to open the `index.html` file to view the website.
 
