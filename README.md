@@ -2,6 +2,10 @@
 
 Welcome to the repository of my personal Portfolio Website. This site showcases my projects, professional experiences, and educational background, providing a comprehensive overview of my skills and achievements in the field of web development.
 
+## Live Website
+
+You can view the live version of this portfolio at [Pragyan's Portfolio](https://pragyan-portfolio.netlify.app/). This live version demonstrates the current state of the project and is hosted on Netlify, a popular and efficient cloud-based hosting service. Hosting on Netlify ensures high availability and fast loading times for the website.
+
 ## Technologies Used
 
 This website is crafted with a combination of web technologies, each serving a specific purpose to deliver a seamless user experience:
@@ -13,7 +17,11 @@ This website is crafted with a combination of web technologies, each serving a s
 
 ## Hosting
 
-The website is hosted on the **Netlify** platform, ensuring high availability and fast loading times.
+The website is hosted on the **Netlify** platform. The hosting process involved:
+
+- Building the site from the HTML, CSS, and JavaScript files.
+- Deploying the built site directly to Netlify.
+- Netlify automatically updates the live site upon new commits to the main branch of this repository, ensuring that the live version is always up-to-date.
 
 ## Directory Structure
 
@@ -33,7 +41,3 @@ To get a local copy up and running, follow these simple steps:
 3. **Open `index.html`**: Use any web browser to open the `index.html` file to view the website.
 
 Feel free to explore the code, and see how the combination of HTML, CSS, Bootstrap, and JavaScript come together to create a responsive and user-friendly web experience.
-
----
-
-*Note: If you have any specific sections or additional information you would like to include, such as a 'Contact' or 'Contribution' section, please let me know and I can add that as well.*
