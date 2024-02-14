@@ -1,4 +1,5 @@
 # Portfolio Website
+![image](https://github.com/cyber-prags/Portfolio-Website/assets/74003758/486640b6-f9cb-4144-bff4-e2ed9451e766)
 
 Welcome to the repository of my personal Portfolio Website. This site showcases my projects, professional experiences, and educational background, providing a comprehensive overview of my skills and achievements in the field of data science and artificial intelligence along with a tinge of web development.
 
