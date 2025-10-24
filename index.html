@@ -870,6 +870,82 @@
     <!-- SCRIPT FOR ICONS -->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Alphard Session Replay V2 Tracking -->
+<script>
+(function() {
+    const PROJECT_KEY = 'sr_prod_229175b5bda2c4bf51cfa83a8c796e71';
+    const API_URL = 'http://localhost:5001/v1/sdk';
+    const SESSION_ID = 'session-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+    
+    console.log('🎬 Alphard Session Replay: Initializing...');
+    
+    fetch(API_URL + '/ping', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-project-key': PROJECT_KEY
+        },
+        body: JSON.stringify({ projectKey: PROJECT_KEY })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('✅ Alphard Connected!', data);
+        return fetch(API_URL + '/events', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-project-key': PROJECT_KEY
+            },
+            body: JSON.stringify({
+                sessionId: SESSION_ID,
+                user: { id: 'visitor-' + Date.now() },
+                events: [{
+                    type: 2,
+                    timestamp: Date.now(),
+                    data: {
+                        source: 'PageLoad',
+                        type: 'SessionStart',
+                        url: window.location.href,
+                        title: document.title
+                    }
+                }]
+            })
+        });
+    })
+    .then(() => {
+        console.log('✅ Tracking started!');
+        document.addEventListener('click', function(e) {
+            fetch(API_URL + '/events', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-project-key': PROJECT_KEY
+                },
+                body: JSON.stringify({
+                    sessionId: SESSION_ID,
+                    user: { id: 'visitor' },
+                    events: [{
+                        type: 2,
+                        timestamp: Date.now(),
+                        data: {
+                            source: 'MouseInteraction',
+                            type: 'Click',
+                            x: e.clientX,
+                            y: e.clientY,
+                            element: e.target.tagName
+                        }
+                    }]
+                })
+            })
+            .then(() => console.log('📊 Click tracked'))
+            .catch(e => console.error('❌ Failed:', e));
+        });
+    })
+    .catch(error => console.error('❌ Connection failed:', error));
+})();
+</script>
   
 </body>
 </html>
+
